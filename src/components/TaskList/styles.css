@@ -1,0 +1,43 @@
+.todos--list {
+}
+.todos--list li{
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #ededed;
+}
+.todos--list li:hover .todos--list-delete{
+    opacity: 1
+}
+.todos--list li.checked .todos--list-check::before{
+    content: "\2713";
+    display: inline-block;
+    color: rgba(0,128,0,.8);
+    font-size: 20px;
+}
+.todos--list li.checked .todos--list-task{
+    color: #d9d9d9;
+    text-decoration: line-through;
+}
+.todos--list-check {
+    margin-right: 30px;
+    margin-left: 15px;
+    font-size: 0;
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    border: 1px solid #ededed;
+}
+.todos--list-delete {
+    margin-left: auto;
+    border: none;
+    transform: rotate(45deg);
+    font-size: 30px;
+    color: #cc9a9a;
+    margin-right: 20px;
+    opacity: 0;
+}
+.todos--list-task {
+    font-size: 24px;
+    word-break: break-all;
+}

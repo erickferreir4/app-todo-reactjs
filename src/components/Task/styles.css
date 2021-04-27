@@ -1,0 +1,26 @@
+.todos--task {
+    display: flex;
+    align-items: center;
+    box-shadow: inset 0 -2px 1px rgb(0 0 0 / 3%);
+}
+.todos--task button{
+    font-size: 22px;
+    color: #e6e6e6;
+    transform: rotate(90deg);
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 16px 25px;
+}
+
+.todos--task textarea{
+    width: 100%;
+    padding: 16px 0;
+    border: none;
+    background: rgba(0,0,0,.003);
+    font-size: 24px;
+    color: #4d4d4d;
+}
+.todos--task textarea::placeholder{
+    color: #4d4d4d40;
+}

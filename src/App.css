@@ -1,3 +1,15 @@
 body {
-    background: #f5f5f5
+    background: #f5f5f5;
+    font: 14px Helvetica Neue,Helvetica,Arial,sans-serif;
+    color: #4d4d4d;
+    font-weight: 300;
+}
+
+.todos--wrapper {
+    min-width: 230px;
+    max-width: 550px;
+    margin: 0 auto;
+    background: #fff;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%), 0 25px 50px 0 rgb(0 0 0 / 10%);
+    margin-top: 30px;
 }
