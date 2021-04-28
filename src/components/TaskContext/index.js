@@ -1,37 +1,30 @@
 import React from 'react';
+import useLocalStorage from './../../hooks/useLocalStorage';
 
 export const TaskContext = React.createContext(null)
 
 export const TaskStorage = ({children}) => {
 
-    let fetchtasks = [
-        {
-            id: 1,
-            task: 'task 1',
-            isActive: false
-        },
-        {
-            id: 2,
-            task: 'task 2',
-            isActive: true
-        },
-        {
-            id: 3,
-            task: 'task 3',
-            isActive: true
-        },
-    ]
+    const [taskStorage, setTaskStorage] = React.useState(null)
+    const [tasks, setTask] = React.useState(null)
+    const {storage, updateStorage} = useLocalStorage()
 
-    const [taskStorage, setTaskStorage] = React.useState(fetchtasks)
-
-    const [tasks, setTask] = React.useState(fetchtasks)
-
+    React.useEffect( () => {
+        //setTimeout( () => {
+        setTaskStorage(storage)
+        setTask(storage)
+        //}, 5000)
+    }, [storage])
 
     function addTask(task) {
         let id = new Date().getTime()
-        const task_update = [...taskStorage, {id: id, task: task, isActive: true}]
+        const new_task = {id: id, task: task, isActive: true}
+        const task_update = [...taskStorage, new_task]
+
         setTaskStorage(task_update)
         setTask(task_update)
+
+        updateStorage(task_update)
     }
 
     function updateTask(id, key, value, ...args) {
@@ -43,12 +36,16 @@ export const TaskStorage = ({children}) => {
         })
         setTaskStorage(task_update)
         setTask(task_update)
+
+        updateStorage(task_update)
     }
 
     function deleteTask(id) {
         const task_update = taskStorage.filter( item => item.id !== id )
         setTaskStorage(task_update)
         setTask(task_update)
+
+        updateStorage(task_update)
     }
 
     function all() {
@@ -72,11 +69,7 @@ export const TaskStorage = ({children}) => {
         setTask(task_update)
     }
 
-    React.useEffect( () => {
-        //console.log(tasks)
-        //console.log(taskStorage)
-    }, [tasks, taskStorage])
-
+    if(!tasks) return (<>'loading...'</>)
     return (
         <TaskContext.Provider 
             value={{
