@@ -1,8 +1,8 @@
 import React from 'react';
 
-export const GlobalContext = React.createContext(null)
+export const TaskContext = React.createContext(null)
 
-export const GlobalStorage = ({children}) => {
+export const TaskStorage = ({children}) => {
 
     let fetchtasks = [
         {
@@ -78,7 +78,7 @@ export const GlobalStorage = ({children}) => {
     }, [tasks, taskStorage])
 
     return (
-        <GlobalContext.Provider 
+        <TaskContext.Provider 
             value={{
                     tasks,
                     updateTask,
@@ -90,6 +90,6 @@ export const GlobalStorage = ({children}) => {
                     addTask
                 }}>
             {children}
-        </GlobalContext.Provider>
+        </TaskContext.Provider>
     )
 }

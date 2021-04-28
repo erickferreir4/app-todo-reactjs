@@ -1,10 +1,10 @@
 import React from 'react';
 import './styles.css';
-import {GlobalContext} from './../GlobalContext';
+import {TaskContext} from './../TaskContext';
 
 const TaskFooter = () => {
 
-    const {tasks, active, all, completed, clear} = React.useContext(GlobalContext)
+    const {tasks, active, all, completed, clear} = React.useContext(TaskContext)
     const left = tasks.filter( item => item.isActive ).length
     const [clicked, setClicked] = React.useState(null)
 

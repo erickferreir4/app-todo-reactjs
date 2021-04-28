@@ -5,18 +5,18 @@ import Header from './components/Header';
 import Task from './components/Task';
 import TaskFooter from './components/TaskFooter';
 import TaskList from './components/TaskList';
-import {GlobalStorage} from './components/GlobalContext';
+import {TaskStorage} from './components/TaskContext';
 
 const App = () => {
     return (
         <>
             <Header />
             <div className='todos--wrapper'>
-                <GlobalStorage>
+                <TaskStorage>
                     <Task />
                     <TaskList />
                     <TaskFooter />
-                </GlobalStorage>
+                </TaskStorage>
             </div>
         </>
     )

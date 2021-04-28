@@ -1,10 +1,10 @@
 import React from 'react';
 import './styles.css';
-import {GlobalContext} from './../GlobalContext';
+import {TaskContext} from './../TaskContext';
 
 const Task = () => {
 
-    const {tasks, updateTask, addTask} = React.useContext(GlobalContext)
+    const {tasks, updateTask, addTask} = React.useContext(TaskContext)
     const [activeAll, setActive] = React.useState(true)
 
     function toggleActive() {
