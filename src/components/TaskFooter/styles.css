@@ -4,14 +4,21 @@
     padding: 10px;
     align-items: center;
 }
+
 .todos--footer button{
     color: #777;
     margin: 3px;
     padding: 3px 7px;
 }
+
+.todos--footer button.all, .todos--footer button.active, .todos--footer button.completed{
+    border:1px solid rgba(175,47,47,.2)
+}
+
 .todos--footer button:hover{
     border:1px solid rgba(175,47,47,.2)
 }
+
 .todos--footer-clear:hover{
     border: none!important;
     text-decoration:underline;
